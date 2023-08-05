@@ -57,12 +57,12 @@ console.log(totalExperience);
 // Grouping by a property, and totaling it too
 let experienceByProfession = teamMembers.reduce((acc, curr) => {
   let key = curr.profession;
-  if (!acc[key]) {
-    acc[key] = curr.yrsExperience;
+  if (!acc[key]) { // if it doesnt have the key already stored in new array
+    acc[key] = curr.yrsExperience; // add the new key and the starting total/value for the new key
   } else {
-    acc[key] += curr.yrsExperience;
+    acc[key] += curr.yrsExperience; // else if the key exists += the new value to it
   }
-  return acc;
-}, {});
+  return acc; // return the accumulated key value pairs
+}, {}); // remember the starting value is giving it empty object!!
 
 console.log(experienceByProfession);
